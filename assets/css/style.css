@@ -375,6 +375,10 @@ button:hover {
   justify-content: space-between;
 }
 
+.middle .post .stats__and__options ul li {
+  white-space: nowrap;
+}
+
 .middle .post .stats__and__options ul li i {
   padding: 0.5rem;
   aspect-ratio: 1 / 1;
@@ -415,10 +419,7 @@ button:hover {
   font-size: 0.8rem;
 }
 
-.middle .post .stats__and__options ul:first-child {
-  gap: 2rem;
-}
-
+.middle .post .stats__and__options ul:first-child,
 .middle .post .stats__and__options ul:last-child {
   gap: 2rem;
 }
@@ -605,6 +606,12 @@ button:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--mainBlue);
+}
+
+@media screen and (max-width: 1336px) {
+  .middle .post .stats__and__options ul:last-child {
+    gap: 0rem ;
+  }
 }
 
 @media screen and (max-width: 1170px) {
