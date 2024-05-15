@@ -104,7 +104,7 @@ button:hover {
   padding-top: 0.5rem;
 }
 
-.middle header > div > span {
+.middle header > div span {
   color: var(--grayText);
   font-size: 0.8rem;
 }
@@ -211,7 +211,8 @@ button:hover {
   color: var(--grayText);
 }
 
-.middle .profile .followers {
+.middle .profile .followers,
+.middle .show__account .followers {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -223,7 +224,12 @@ button:hover {
   border-bottom: 1px solid #fff;
 }
 
-.middle .profile .followers > div > span:last-child {
+.middle .show__account .followers span:first-child{
+    color: #fff;
+}
+
+.middle .profile .followers > div > span:last-child,
+.middle .show__account .followers span:last-child{
   color: var(--grayText);
 }
 
@@ -334,6 +340,45 @@ button:hover {
   font-size: 0.8rem;
   justify-content: space-between;
   align-items: center;
+}
+
+.middle .posts .post__header > div:first-child {
+  position: relative;
+}
+
+.middle .posts .post__header .show__account {
+  background-color: #000;
+  display: none;
+  position: absolute;
+  padding: 1rem;
+  bottom: 2rem;
+  left: 0;
+  box-shadow: 6px 3px 31px -27px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 6px 3px 31px -27px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 6px 3px 31px -27px rgba(255, 255, 255, 0.75);
+  border-radius: 1rem;
+}
+
+.middle .posts .post__header > div:first-child:hover .show__account{
+    display: inline-block !important;
+}
+
+.middle .posts .post__header .show__account > div:nth-child(2) > div {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 1rem;
+}
+
+.middle .posts .post__header .show__account > div:first-child {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.middle .posts .post__header .show__account p {
+  font-size: 1rem;
 }
 
 .middle .posts .post__header > div > div:first-child {
@@ -587,6 +632,59 @@ button:hover {
   border-bottom: 1px solid var(--grayText);
 }
 
+/* Footer */
+footer {
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--mainBlue);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div:first-child {
+  margin-left: 20%;
+}
+
+footer span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+footer p {
+  margin-top: 0;
+}
+
+footer .buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .buttons > button:first-child {
+  background-color: var(--mainBlue);
+  padding: 0.5rem 0.8rem;
+  min-width: 5rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  border: 1px solid #1d9bf0;
+  color: #fff;
+}
+
+footer .buttons > button:first-child:hover {
+  background: #34a5f2 !important;
+}
+
+footer .buttons > button:last-child {
+  background-color: #fff;
+  padding: 0.5rem 0.8rem;
+  min-width: 5rem;
+  font-weight: 500;
+  border-radius: 2rem;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -610,7 +708,7 @@ button:hover {
 
 @media screen and (max-width: 1336px) {
   .middle .post .stats__and__options ul:last-child {
-    gap: 0rem ;
+    gap: 0rem;
   }
 }
 
@@ -663,5 +761,19 @@ button:hover {
   }
   .container {
     padding-inline: 2rem;
+  }
+
+  footer div:first-child {
+    display: none;
+  }
+
+  footer .buttons {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  footer .buttons > button {
+    flex: 1;
   }
 }
